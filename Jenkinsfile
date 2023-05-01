@@ -12,7 +12,7 @@ pipeline {
      stage('run') {
         steps {
             sh """
-                docker build --rm --name django -p 8000:8000 django 
+                docker run --name django -p 8000:8000 django 
             """
             }
           }
