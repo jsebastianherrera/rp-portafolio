@@ -9,6 +9,11 @@ pipeline {
             """
             }
           }
+    stage('pyliny'){
+        steps {
+            sh 'ls'
+          }
+      }
      stage('run') {
         steps {
             sh """
