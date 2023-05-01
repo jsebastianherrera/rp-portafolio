@@ -9,9 +9,11 @@ pipeline {
             """
             }
           }
-    stage('pyliny'){
+    stage('pylint'){
         steps {
-            sh 'ls'
+            sh """
+               find -name "*.py"  | xargs pylint --disable=C0111 --exit-zero
+            """
           }
       }
      stage('run') {
