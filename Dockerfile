@@ -1,6 +1,7 @@
 FROM python:latest
 RUN apt-get update -y
 RUN apt-get upgrade -y
+RUN apt-get install pylint -y
 WORKDIR /app
 EXPOSE 8000
 COPY ./rp-portfolio/ .  
