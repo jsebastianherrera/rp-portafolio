@@ -7,6 +7,3 @@ ENV JAVA_OPTS=-Djenkins.install.runSetupWizard=false
 ADD plugins.txt .
 RUN jenkins-plugin-cli -f plugins.txt
 USER root
-RUN apt-get update -y
-RUN apt-get install docker.io -y
-

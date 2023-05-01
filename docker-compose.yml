@@ -1,13 +1,4 @@
 services:
-  # portfolio:
-  #   build:
-  #     context: ./rp-portfolio
-  #     dockerfile: Dockerfile
-  #   container_name: portfolio
-  #   ports:
-  #     - 8000:8000
-  #   networks:
-  #     - devopsnet
   jenkins:
     build:
       context: ./jenkins
@@ -16,7 +7,9 @@ services:
     container_name: jenkins
     restart: always
     volumes:
-      - jenkins-data:/var/jenkins_home
+      - jenkins-data:/var/jenkins_home:rw
+      - /var/run/docker.sock:/var/run/docker.sock
+
     ports:
       - 8080:8080
     networks:
