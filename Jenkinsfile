@@ -1,14 +1,19 @@
 pipeline {
-    agent { 
-      dockerfile true {
-          args '-p 8000:8000'
-        }
-      } 
+    agent { any } 
     stages {
       stage('Cloning repo') {
         steps {
             git branch: 'main', url: 'https://github.com/jsebastianherrera/rp-portafolio'
-            sh 'python manage.py runserver 0.0.0.0:8000'
+            sh """
+                docker build -t django .
+            """"
+            }
+          }
+     stage('run') {
+        steps {
+            sh """
+                docker build --rm --name django -p 8000:8000 django 
+            """"
             }
           }
    }
