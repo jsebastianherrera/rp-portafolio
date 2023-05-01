@@ -13,7 +13,7 @@ pipeline {
         steps {
             sh """
                 docker build --rm --name django -p 8000:8000 django 
-            """"
+            """
             }
           }
    }
