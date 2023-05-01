@@ -6,7 +6,7 @@ pipeline {
             git branch: 'main', url: 'https://github.com/jsebastianherrera/rp-portafolio'
             sh """
                 docker build -t django .
-            """"
+            """
             }
           }
      stage('run') {
