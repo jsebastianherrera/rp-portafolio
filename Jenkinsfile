@@ -12,7 +12,7 @@ pipeline {
     stage('pylint') {
         steps {
             sh """
-               where pylint
+               ls
                pylint --disable=C0111 --exit-zero rp-portafolio
             """
           }
