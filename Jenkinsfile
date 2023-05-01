@@ -12,7 +12,7 @@ pipeline {
     stage('pylint'){
         steps {
             sh """
-               find -name "*.py"  | xargs pylint --disable=C0111 --exit-zero
+               pylint --disable=C0111 --exit-zero rp-portafolio
             """
           }
       }
