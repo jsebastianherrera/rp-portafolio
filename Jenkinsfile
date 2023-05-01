@@ -1,5 +1,5 @@
 pipeline {
-    agent { label "linux" } 
+    agent any 
     stages {
       stage('Cloning repo') {
         steps {
